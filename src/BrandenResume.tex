@@ -36,11 +36,12 @@
 \section{Work Experience}
 
 \experience{Sonos}{
-    \role{Senior Software Engineer}{Aug 2020  - Feb 2025}{
+    \role{Senior Software Engineer}{Oct 2023  - Feb 2025}{
         \achievement{
             Designed and implemented a distributed Update Server that aggregates
             update information from products and delivers firmware and software
-            updates to 50 million products worldwide.
+            updates to 50 million products worldwide, reducing costs from
+            \$700,000 to \$10,000.
             \begin{itemize}
                 \item Designed and implemented a distributed Content
                       Delivery Network to optimize update times and gathering
@@ -115,12 +116,11 @@
             \end{itemize}
         }
     }
-    \role{Software Engineer}{Aug 2020 - Nov 2023}{
+    \role{Software Engineer}{Aug 2020 - Oct 2023}{
         \achievement{
             Implemented an internal fullstack, microservices app on AWS Lambda, S3, and
             StepFunctions for CRUD operations on internal user, product, user
-            groups, and update records integrating Okta with SAML authentication
-            to authenticate privileged users.
+            groups, and update records.
             \begin{itemize}
                 \item Implemented automated CI / CD pipeline utilizing
                       Jenkins and Github Actions with a Gitflow workflow
@@ -143,15 +143,14 @@
 
         \achievement{
             Designed and implemented a metrics and log aggregation stream
-            by utilizing a Prometheus and Loki server hosted on Kubernetes
-            sidecars to aggregate metrics and logs from automation jobs running
+            by utilizing a Prometheus and Loki server hosted as a
+            sidecar on Kubernetes to aggregate metrics and logs from
+            automation jobs running
             on Jenkins.
             \begin{itemize}
                 \item Led to aggregation of job metrics and logs that allowed
                       for optimization of build bottlenecks and reduced bugs
                       by 12\%.
-                \item Scaled by deploying these services to a Kubernetes
-                      cluster as a sidecar to existing pod services.
             \end{itemize}
         }
 
