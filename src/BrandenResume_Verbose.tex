@@ -43,23 +43,36 @@
             updates to 50 million products worldwide, reducing costs from
             \$700,000 to \$10,000.
             \begin{itemize}
-                \item Implemented a distributed CDN to optimize update times and gathering
-                      of product data via geolocation.
+                \item Designed and implemented a distributed Content
+                      Delivery Network to optimize update times and gathering
+                      of product data in data streams using geolocation.
 
-                \item Improved latency by 300\% and reduced CPU utilization through
-                      using Kubernetes.
+                \item Performed performance optimization on latency and
+                      CPU utilization by utilizing Jenkins and K8s to
+                      spin up millions of requests. Improved latency by
+                      300\% and reduced CPU \% utilization through
+                      orchestrating a Horizontal Pod Autoscaler in
+                      kubernetes.
 
-                \item Implemented a Redis Caching Layer, reducing RDB read requests by 92\%.
+                \item Designed and implemented a Redis Caching Layer to
+                      reduce read requests on our RDB cluster by 92\%.
 
-                \item Created static caching layer to re-direct
-                      88\% of requests to edge location servers.
+                \item Implemented a static caching layer to re-direct
+                      88\% of requests from the origin to edge location servers.
 
-                \item Automated a CI / CD pipeline for testing and
-                      blue-green deployments through Jenkins and Github Actions.
+                \item Analyzed sql query plans and DB locking mechanisms
+                      and indexes to optimize READ performance on the DB
+                      Cluster.
 
-                \item Designed a data streaming pipeline using
-                      S3 and Kinesis to store 3M users and 50M
-                      product data.
+                \item Implemented an automated CI / CD pipeline
+                      utilizing Jenkins and Github Actions to automate
+                      blue-green deployments and preventing bugs through
+                      automating our testing framework.
+
+                \item Analyzed network traffic through our logging
+                      pipeline and implemented a data streaming pipeline using
+                      S3 and Kinesis to store 3 million users and 50 million
+                      product information in a data lake for analysis.
             \end{itemize}
         }
         \achievement{
@@ -67,22 +80,19 @@
             PostgresSQL internal library utilized in a 3-tier service that
             centralized meta-information about products, firmware, and
             releases.
+
             \begin{itemize}
-                \item Implemented an exhaustive type system
-                      for declarative composition of custom sql
-                      command in virtual DB transaction-chains.
-
-                \item Centralized all meta-information for look-up and
-                      modification in dev / release cycles.
-
+                \item Implemented an exhaustive type system that allows
+                      for composition of custom multiple sql commands across data
+                      models in DB transaction-chains in a declarative
+                      style.
+                \item Centralized all meta-information that allowed
+                      developers to look-up and create update packages for
+                      testing and release.
                 \item Improved build-to-release times from 6 hours down
                       to 2 hours.
-
-                \item Achieved consistent availability using K8s
-                      Deployment Sets and multi-region DB replication.
-
-                \item Implemented custom design pattern to access DB by
-                      virtualizing transactions in a graph-like data structure.
+                \item Allowed efficient searching of multiple products
+                      based on shared query properties that allows for efficient auditing.
             \end{itemize}
         }
         \achievement{
@@ -91,12 +101,14 @@
             utilized Jenkins in its backend to automate the queuing of jobs
             to build, deliver, and release firmware across all products.
             \begin{itemize}
-                \item Utilized framework to generate automated release process to release Alpha, Beta, Production
-                      firmware.
-
-                \item Virtualized Jenkins jobs to reduce developer bugs
-                      and Jenkins plugin issues by 72\%.
-
+                \item Converted a manual release process into an
+                      automated release process that allows releases of
+                      firmware of all products to Alpha, Beta, Production
+                      users.
+                \item Reduced developer bugs and Jenkins plugin issues
+                      by 72\% by creating a virtualization of Jenkins jobs that allows
+                      developers to declaratively specify their job using
+                      Scala classes and config files.
                       % \item Implemented bunch of python scripts that were
                       %       called by the virtualization process to automate release
                       %       of firmware / software to different destinations, App
@@ -110,19 +122,21 @@
             StepFunctions for CRUD operations on internal user, product, user
             groups, and update records.
             \begin{itemize}
-                \item Automated CI / CD pipeline utilizing
+                \item Implemented automated CI / CD pipeline utilizing
                       Jenkins and Github Actions with a Gitflow workflow
-                      branching strategy for parallel development
-                      and more efficient rollout of features and bug-fixes.
+                      branching strategy to allow for parallel development
+                      and streamline the rollout of features and bug-fixes.
                 \item Provided distributed load-balancing and SSL
-                      termination with a NGINX web-server.
-                \item Developed custom MapReduce framework library
-                      utilizing S3 and StepFunctions to batch process
-                      updates to millions of users.
-                \item Utilized Serverless framework to declaratively
-                      create infrastructure and DAO with
-                      SQL stored procedures / indexes to optimize DB calls.
-                \item Expanded app's features to update Redis Caches and other service's
+                      termination by deploying a custom NGINX web-server in
+                      front of AWS Lambda microservices.
+                \item Implemented a custom MapReduce framework library
+                      utilizing S3 and StepFunctions in order to process
+                      updates to batches of millions of users at once.
+                \item Utilized the Serverless framework to declaratively
+                      create infrastructure and DAO design pattern with custom
+                      SQL stored procedures to perform DB calls.
+                \item Implemented an expansion to the app's features by
+                      implementing updates to Redis Caches and other service's
                       DBs upon updates to internal data.
             \end{itemize}
         }
@@ -134,14 +148,14 @@
             automation jobs running
             on Jenkins.
             \begin{itemize}
-                \item Aggregation Jenkins job metrics and logs that
-                      optimized build bottlenecks and reduced bugs
+                \item Led to aggregation of job metrics and logs that allowed
+                      for optimization of build bottlenecks and reduced bugs
                       by 12\%.
             \end{itemize}
         }
 
         \achievement{
-            Designed automation of building and release
+            Designed and implemented automation to building and release
             delivery of product firmware and meta-data by creating
             custom workflow scripts in python and Jenkins for job infrastructure.
             \begin{itemize}
@@ -149,7 +163,7 @@
                       minutes to 1.5 minutes by utilizing
                       multiprocessing.
                 \item Automated existing manual processes such as
-                      using rsync in job workflow scripts to copy files
+                      utilizing rsync to copy files to file-stores and servers
                       for distribution.
             \end{itemize}
         }
