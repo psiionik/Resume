@@ -1,0 +1,260 @@
+\documentclass{ExpressiveResume}
+
+% ============= PACKAGES ==============
+
+\usepackage{hyperref}
+
+% ============= PACKAGES ==============
+
+\begin{document}
+
+% You will write your resume here.
+
+\resumeheader[
+    firstname=Branden,             % Your first name
+    lastname=Kim,              % Your last name
+    email=brandenkiminq@gmail.com,                 % Your email
+    phone=703-223-1009,                 % Your phone number, formatted as XXX-XXX-XXXX
+    linkedin=branden-kim-17704513b,              % Your LinkedIn handle (without the @)
+    github=psiionik,                % Your GitHub handle (without the @)
+    city=Fairfax,                  % Your city of residence (ignored if no `state` is given)
+    state=,                 % Your state of residence
+    qrcode=./images/qr.png,                % the path to a qr code to show in the top right corner
+]
+
+\objective{
+    Senior Software Engineer with 5 years of experience, pursuing a
+    masters degree in ML part-time seeking opportunities to develop
+    data pipelines for ML infrastructure.
+}
+
+% \summary{
+%     % Write your summary statement here.
+% }
+
+% ----- Work Experience -----
+\section{Work Experience}
+
+\experience{Sonos}{
+    \role{Senior Software Engineer}{Oct 2023  - Feb 2025}{
+        \achievement{
+            Worked on the creation of a world-class build and release delivery
+            pipeline to automate and optimize the delivery of high-quality
+            firmware to 50 million speakers around the world.
+            \begin{itemize}
+                \item Built several pipelines across different
+                      development environments for high velocity.
+
+                \item Optimized storage of firmware assets and
+                      reduced time to release by 80\%.
+            \end{itemize}
+        }
+        \achievement{
+            Designed and implemented a distributed Update Server that aggregates
+            update information from products and delivers firmware and software
+            updates to 50 million products worldwide, reducing costs from
+            \$700,000 to \$10,000.
+            \begin{itemize}
+                \item Implemented a distributed CDN to optimize update times and gathering
+                      of product data via geolocation.
+
+                \item Improved latency by 300\% and reduced CPU utilization through
+                      using Kubernetes.
+
+                \item Implemented a Redis Caching Layer, reducing RDB read requests by 92\%.
+
+                \item Created static caching layer to re-direct
+                      88\% of requests to edge location servers.
+
+                \item Automated a CI / CD pipeline for testing and
+                      blue-green deployments through Jenkins and Github Actions.
+
+                \item Designed a data streaming pipeline using
+                      S3 and Kinesis to store 3M users and 50M
+                      product data.
+            \end{itemize}
+        }
+        \achievement{
+            Designed and implemented a functional style, data-model driven
+            PostgresSQL internal library utilized in a 3-tier service that
+            centralized meta-information about products, firmware, and
+            releases.
+            \begin{itemize}
+                \item Implemented an exhaustive type system
+                      for declarative composition of custom sql
+                      command in virtual DB transaction-chains.
+
+                \item Centralized all meta-information for look-up and
+                      modification in dev / release cycles.
+
+                \item Improved build-to-release times from 6 hours down
+                      to 2 hours.
+
+                \item Achieved consistent availability using K8s
+                      Deployment Sets and multi-region DB replication.
+
+                \item Implemented custom design pattern to access DB by
+                      virtualizing transactions in a graph-like data structure.
+            \end{itemize}
+        }
+        \achievement{
+            Designed and implemented a virtual pipeline framework in Scala
+            to create a custom, automated CI / CD pipeline tool that
+            utilized Jenkins in its backend to automate the queuing of jobs
+            to build, deliver, and release firmware across all products.
+            \begin{itemize}
+                \item Utilized framework to generate automated release process to release Alpha, Beta, Production
+                      firmware.
+
+                \item Virtualized Jenkins jobs to reduce developer bugs
+                      and Jenkins plugin issues by 72\%.
+
+                      % \item Implemented bunch of python scripts that were
+                      %       called by the virtualization process to automate release
+                      %       of firmware / software to different destinations, App
+                      %       Stores, Update Server, Development Environments, etc.
+            \end{itemize}
+        }
+    }
+    \role{Software Engineer}{Aug 2020 - Oct 2023}{
+        \achievement{
+            Implemented an internal fullstack, microservices app on AWS Lambda, S3, and
+            StepFunctions for CRUD operations on internal user, product, user
+            groups, and update records.
+            \begin{itemize}
+                \item Automated CI / CD pipeline utilizing
+                      Jenkins and Github Actions with a Gitflow workflow
+                      branching strategy for parallel development
+                      and more efficient rollout of features and bug-fixes.
+                \item Provided distributed load-balancing and SSL
+                      termination with a NGINX web-server.
+                \item Developed custom MapReduce framework library
+                      utilizing S3 and StepFunctions to batch process
+                      updates to millions of users.
+                \item Utilized Serverless framework to declaratively
+                      create infrastructure and DAO with
+                      SQL stored procedures / indexes to optimize DB calls.
+                \item Expanded app's features to update Redis Caches and other service's
+                      DBs upon updates to internal data.
+            \end{itemize}
+        }
+
+        \achievement{
+            Designed and implemented a metrics and log aggregation stream
+            by utilizing a Prometheus and Loki server hosted as a
+            sidecar on Kubernetes to aggregate metrics and logs from
+            automation jobs running
+            on Jenkins.
+            \begin{itemize}
+                \item Aggregation Jenkins job metrics and logs that
+                      optimized build bottlenecks and reduced bugs
+                      by 12\%.
+            \end{itemize}
+        }
+
+        \achievement{
+            Designed automation of building and release
+            delivery of product firmware and meta-data by creating
+            custom workflow scripts in python and Jenkins for job infrastructure.
+            \begin{itemize}
+                \item Optimized the job's completion time from 12
+                      minutes to 1.5 minutes by utilizing
+                      multiprocessing.
+                \item Automated existing manual processes such as
+                      using rsync in job workflow scripts to copy files
+                      for distribution.
+            \end{itemize}
+        }
+    }
+}
+
+\experience{University of Virginia}{
+    \role{Research Assistant}{Aug 2019  - Aug 2020}{
+
+    }
+    \role{Data Structures and Algorithms Teaching Assistant}{Jan 2019 -
+        Aug 2020} {
+
+    }
+}
+
+% ----- Projects -----
+\section{Technical Projects}
+
+\project{scwab}{2025}{
+    \achievement{
+        Implemented a compiler from scratch for the wabbit programming
+        language using Scala and a data-model driven functional
+        programming style.
+    }
+}
+
+\project{Transformer-Based Electronic Sub-Genre Classifier}{2025}{
+    \achievement{
+        Wrote a research paper on implementing a custom Transformer based
+        model architecture for multi-genre music classification specifically
+        in sub-genres in electronic music. Performed transfer learning to
+        utilize an existing BERT model and re-trained on the FMA music
+        dataset and again on a custom dataset with only electronic music.
+        Utilized Fourier Transforms to create embeddings of 30 second music
+        samples which led to a 77\% Sensitivity and 78\% Specificity rate.
+    }
+}
+
+\project{CG Raytracer}{2025}{
+    \achievement{
+        Implemented a 3D RayTracer in Java for fun / learning purposes
+        utilizing the Processing library in Java. Implemented
+        ray-generation, phong lighting models, shape collision algorithms,
+        and BVH Trees for optimization.
+    }
+}
+
+% ----- Education -----
+\section{Education}
+
+\degree{M.S Computer Science ML Specialization}{Georgia Institute
+    of Technology}{2021 - Present}{
+}
+
+\degree{B.S Computer Science \honors{Summa Cum Laude}}{University of
+    Virginia}{2016 - 2020}{
+    % Extra information, e.g. \achievement's
+}
+
+\degree{Bradfield School of Computer Science}{Certifcation of Completion}{2022 - 2023}{
+    \achievement{
+        Year long private institution program that aimed at breaking
+        software abstractions by understanding low-level software
+        abstractions and building up to implementing distributed consensus
+        algorithms like raft.
+    }
+}
+
+% ----- Certifications -----
+\section{Certifications / Courses}
+
+\tech{NVIDIA Deep Learning Fundamentals} |
+\tech{Architecting on AWS} |
+\tech{Advanced Architecting on AWS}
+
+% ----- Tools / Skills -----
+\section{Skills}
+
+\tech{Python}
+\tech{Pytorch}
+\tech{Java}
+\tech{Go}
+\tech{Docker}
+\tech{Terraform}
+\tech{Kubernetes}
+\tech{Redis}
+\tech{Scala}
+\tech{Typescript}
+\tech{JavaScript}
+\tech{C}
+\tech{C++}
+\tech{AWS}
+\tech{Serverless}
+
+\end{document}
